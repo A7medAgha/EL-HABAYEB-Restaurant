@@ -1,0 +1,20 @@
+.row {
+    font-size: 50px;
+    font-weight: 200;
+  }
+
+  .row span {
+    font-size: 50px;
+    font-weight: 700;
+    color: #ff6600;
+  }
+  .row p {
+    font-size: 30px;
+    font-weight: 300;
+  }
+  .btn-warning {
+    background-color: #f0ad4e;
+    border: none;
+  }
+  
+

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> EL HABAYEB Restaurant</title>
+    <link rel="icon" type="image" href="fav icon.jpg" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/our team.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/javasript.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EL HABAYEB</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <script>
+ 
+        const toggler = document.querySelector('.navbar-toggler');
+        toggler.addEventListener('click', () => {
+          toggler.classList.toggle('active');
+        });
+      </script>
+      
+    </header>
+
+
+
+    <div class="p-4 " id="home">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 ">
+          <h2 >Are You Hungry?</h2>
+          <span>Don't Wait!</span>
+          <p>Let's Start To Order Food Now</p>
+          <a  href="#menu" class="btn btn-warning fs-3">Check Out Menu</a>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6 ">
+          <img
+            src="img/pexels-edwardeyer-687824.jpg"
+            class="w-100 h-100 rounded-pill"
+            alt="Delicious food served at restaurant"
+          />
+        </div>
+      </div>
+    </div>
+
+
+    
+
+<div class="container" id="login-form">
+  <h2>Login</h2>
+  <form action="loginEndpoint" method="POST">
+      <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="#register-form" onclick="showRegisterForm()">Register here</a></p>
+      <p>Forgot your password? <a href="#change-password-form" onclick="showChangePasswordForm()">Change password</a></p>
+  </form>
+</div>
+
+
+<div class="container" id="register-form" style="display:none;">
+  <h2>Register</h2>
+  <form action="registerEndpoint" method="POST">
+      <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Register</button>
+      <p>Already have an account? <a href="#login-form" onclick="showLoginForm()">Login here</a></p>
+  </form>
+</div>
+
+
+<div class="container" id="change-password-form" style="display:none;">
+  <h2>Change Password</h2>
+  <form action="changePasswordEndpoint" method="POST">
+      <div class="form-group">
+          <label for="current-password">Current Password:</label>
+          <input type="password" id="current-password" name="current-password" required>
+      </div>
+      <div class="form-group">
+          <label for="new-password">New Password:</label>
+          <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <div class="form-group">
+          <label for="confirm-password">Confirm New Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <button type="submit">Change Password</button>
+      <p>Remembered your password? <a href="#login-form" onclick="showLoginForm()">Login here</a></p>
+  </form>
+</div>
+
+<script>
+  function showLoginForm() {
+    document.getElementById("login-form").style.display = "block";
+    document.getElementById("register-form").style.display = "none";
+    document.getElementById("change-password-form").style.display = "none";
+  }
+
+  function showRegisterForm() {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-form").style.display = "block";
+    document.getElementById("change-password-form").style.display = "none";
+  }
+
+  function showChangePasswordForm() {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-form").style.display = "none";
+    document.getElementById("change-password-form").style.display = "block";
+  }
+</script>
+
+
+
+    <section class="about-us" id="about">
+      <div class="about-container">
+        <h2>About EL HABAYEB</h2>
+        <p>
+          Welcome to EL HABAYEB, where food meets tradition and taste. Our
+          restaurant offers a unique dining experience, combining the finest
+          local ingredients with traditional recipes passed down through
+          generations. We believe that food is more than just a meal – it's a
+          celebration of culture, family, and good times.
+        </p>
+
+        <h3>Our Story</h3>
+        <p>
+          Founded in 2020 , EL HABAYEB began as a small family-owned restaurant
+          in the heart of Borg EL-Arab City. Over the years, we’ve grown, but our
+          commitment to providing fresh, flavorful meals with a touch of home
+          has remained unchanged. Whether you're here for a quick bite or a
+          special celebration, we strive to create an atmosphere where everyone
+          feels like family.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>
+          At EL HABAYEB, we’re committed to using only the highest-quality
+          ingredients to prepare every dish from scratch. We aim to offer a
+          welcoming and relaxed environment where our guests can enjoy great
+          food and good company. Our team is passionate about creating
+          exceptional dining experiences, ensuring each visit is memorable.
+        </p>
+
+        <h3>What We Offer</h3>
+        <ul>
+          <li>
+            <strong>Authentic Cuisine:</strong> Enjoy a wide variety of
+            traditional dishes made with love.
+          </li>
+          <li>
+            <strong>Fresh Ingredients:</strong> We source the finest local
+            produce, meats, and spices to deliver the best flavors.
+          </li>
+          <li>
+            <strong>Cozy Ambience:</strong> Whether you're enjoying a meal with
+            friends or celebrating a special occasion, our warm atmosphere is
+
+            the perfect setting.
+          </li>
+          <li>
+            <strong>Friendly Service:</strong> Our dedicated staff are here to
+            make your dining experience unforgettable.
+          </li>
+        </ul>
+
+        <p>
+          We hope to see you soon at EL HABAYEB – where every meal is a
+          celebration!
+        </p>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="title">
+          <h2>Our Special Menu</h2>
+          <p>Order two and get third for free</p>
+        </div>
+        <div class="menu-items">
+          <div class="menu-items-left">
+            <div class="menu-item">
+              <img src="img/food 1.jpg" alt="LASAL Cheese" />
+              <div>
+                <h3>LASAL CHEESE <span class="primary-text">$18.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food2.png" alt="JUMBO CRAB SHRIMP" />
+              <div>
+                <h3>
+                  JUMBO CRAB SHRIMP <span class="primary-text">$24.00</span>
+                </h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food3.png" alt="KOKTAIL JUCIE" />
+              <div>
+                <h3>KOKTAIL JUCIE <span class="primary-text">$12.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food4.png" alt="CAPO STEAK" />
+              <div>
+                <h3>CAPO STEAK <span class="primary-text">$60.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food5.png" alt="ORGANIC FRUIT SALAD" />
+              <div>
+                <h3>
+                  ORGANIC FRUIT SALAD <span class="primary-text">$8.00</span>
+                </h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food6.png" alt="CHEESE PIZZA" />
+              <div>
+                <h3>CHEESE PIZZA <span class="primary-text">$18.00</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="menu-items-right">
+            <div class="menu-item">
+              <img src="img/food7.jpeg" alt="KOFTA MEAT" />
+              <div>
+                <h3>KOFTA MEAT <span class="primary-text">$40.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food8.jpeg" alt="SPANISH PIES" />
+              <div>
+                <h3>SPANISH PIES <span class="primary-text">$14.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food9.jpeg" alt="CHEESE TOST" />
+              <div>
+                <h3>CHEESE TOST <span class="primary-text">$6.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food10.jpeg" alt="FRUIT SALAD" />
+              <div>
+                <h3>FRUIT SALAD <span class="primary-text">$14.00</span></h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food11.jpeg" alt="CHICKEN SHAWARMA" />
+              <div>
+                <h3>
+                  CHICKEN SHAWARMA <span class="primary-text">$20.00</span>
+                </h3>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/food12.jpeg" alt="MEGA CHEESE PIZZA" />
+              <div>
+                <h3>
+                  MEGA CHEESE PIZZA <span class="primary-text">$30.00</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+       <a  class="order-botton"  href="#contact">Order Now</a>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="contact-header">
+          <h2>We'd Love to Hear From You!</h2>
+          <p>Have questions, feedback, or just want to say hello? Drop us a message and we'll get back to you shortly.</p>
+      </div>
+  
+      <div class="contact-content">
+          <div class="contact-left">
+              <h3>Our Location</h3>
+              <p>Find us at:</p>
+              <div class="location-info">
+                  <p><strong>123 Main Street, Borg El-Arab City, Alexandria, Egypt</strong></p>
+                  <div class="map-container">
+                     
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.6936073023636!2d29.93474931719619!3d31.21569411865098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5f465f7a1a0f1%3A0x178590a1ff05cf97!2s123%20Main%20Street%2C%20Borg%20El-Arab%20City!5e0!3m2!1sen!2seg!4v1609455440280!5m2!1sen!2seg" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="contact-right">
+              <h3>Contact Form</h3>
+              <form action="submit_contact_form.php" method="POST" class="contact-form">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+                  <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+  
+                  <button type="submit">Send Message</button>
+              </form>
+          </div>
+      </div>
+  
+      
+      <div class="contact-options">
+          <p>Or get in touch with us directly:</p>
+          <div class="options-buttons">
+              <a href="tel:+201234567890" class="contact-btn phone">Call Us</a>
+              <a href="https://wa.me/201234567890" target="_blank" class="contact-btn whatsapp">Chat on WhatsApp</a>
+          </div>
+      </div>
+  </section>
+
+  <section class="team-info" id="team">
+    <div class="flex-container">
+        <div class="team-content">
+            <h1>Meet Our Team</h1>
+            <p>At El Habayeb Restaurant, we are dedicated to providing you with an unforgettable dining experience.</p>
+            
+            <h2>Our Philosophy</h2>
+            <p>At El Habayeb, we believe that great food comes from great teamwork. Our team is passionate about delivering exceptional service and culinary excellence. Each member plays a vital role in creating a memorable dining experience for our guests.</p>
+            
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Quality:</strong> We source the freshest ingredients to ensure the highest quality in every dish.</li>
+                <li><strong>Passion:</strong> Our team is driven by a love for food and hospitality.</li>
+                <li><strong>Community:</strong> We strive to support local farmers and businesses.</li>
+                <li><strong>Innovation:</strong> We are always looking for new ways to enhance our menu and service.</li>
+            </ul>
+
+            <h2>Our Commitment</h2>
+            <p>We are committed to providing a welcoming atmosphere where everyone feels at home. Our team works tirelessly to ensure that every guest leaves with a smile and a desire to return.</p>
+        </div>
+        <div class="team-image">
+            <img src="img/our team.png" alt="Our Team">
+        </div>
+    </div>
+</section>
+
+
+  <footer class="restaurant-footer">
+    <div class="footer-container">
+        
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>El Habayeb Restaurant is dedicated to delivering a delightful dining experience with fresh ingredients and exceptional service.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Address:</strong> 123 Food Street, Alexandria, Egypt</p>
+            <p><strong>Phone:</strong> +20 123 456 7890</p>
+            <p><strong>Email:</strong> elhabayeb@gmail.com</p>
+        </div>
+
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#team">Our Team</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href=""><img src="img/facebook.png" alt="Facebook"></a></li>
+                <li><a href=""><img src="img/instagram.png" alt="Instagram"></a></li>
+                <li><a href=""><img src="img/twitter.png" alt="Twitter"></a></li>
+                <li><a href=""><img src="img/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 El Habayeb Restaurant. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.querySelector(".contact-form");
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const messageInput = document.querySelector("#message");
+
+  
+    function showNotification(message, type) {
+      const notification = document.createElement("div");
+      notification.className = `notification ${type}`;
+      notification.textContent = message;
+
+      document.body.appendChild(notification);
+
+     
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      
+      if (nameInput.value.trim() && emailInput.value.trim() && messageInput.value.trim()) {
+        showNotification("Your message has been sent successfully!", "success");
+
+        
+        contactForm.reset();
+      } else {
+        showNotification("Please fill in all the fields!", "error");
+      }
+    });
+  });
+</script>
+
+
+
+
+
+

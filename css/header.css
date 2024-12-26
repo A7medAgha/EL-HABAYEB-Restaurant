@@ -1,0 +1,27 @@
+.navbar {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+ a.nav-link {
+  color: #ffc107 !important; 
+  font-weight: 500;
+  font-size: 20px;
+
+}
+
+body {
+  padding-top: 70px; 
+}
+
+.navbar-toggler.active {
+  background-color: #ffc107 !important;
+  border-radius: 5px;
+}
+.navbar-brand{
+  color: #ffc107 !important;
+  font-weight: 900;
+  font-size: 30px !important;
+
+}
